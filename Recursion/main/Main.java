@@ -2,32 +2,20 @@ package main;
 public class Main{
 
 	public static void main(String[] args){
+		int[] data = {4,6,3,2,5,7,3,3,0};	
+		System.out.println(a(data,0));
 		
-		b(5);
-		
 	}
-
-	public static void a(int n){
-		if (n > 0){
-			a(n-1);
+	public static int a(int[] data, int start){
+		if (start == data.length - 1){
+			return data[start];
 		}
-		System.out.println(n);
-	}
-
-	public static void b(int n){
-		if(n>0){
-			b(n-1);
-			System.out.println(n);
-		}
-	}
-
-	public static void c(int n){
-		if(n>0){
-			c(n-1);
+		int val = a(data,start-1);
+		if (val > data[start]){
+			return val;
 		}else{
-			System.out.println(n);
+			return data[start];
 		}
 	}
-		
 
 }
